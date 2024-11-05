@@ -40,7 +40,6 @@ async function manipularBusca () {
   try {
     const pensamentosFiltrados = await api.buscarPensamentoPorTermo(termoBusca)
     ui.renderizarPensamentos(pensamentosFiltrados)
-    console.log(pensamentosFiltrados)
   } catch (error) {
     alert("Erro ao realizar busca")
   }
