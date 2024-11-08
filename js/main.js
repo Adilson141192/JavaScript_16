@@ -20,10 +20,11 @@ async function manipularSubmissaoFormulario(event) {
   const autoria = document.getElementById("pensamento-autoria").value
   const data = document.getElementById("pensamento-data").value
 
-  if(!validarData(data)){
-    alert("Não é permitido o cadastro de datas futuras. Selecione outra data.")
+  if (!validarData(data)) {
+    alert("Não é permitido o cadastro de datas futuras. Selecione outra data")
+    return
   }
-
+  
   try {
     if (id) {
       await api.editarPensamento({ id, conteudo, autoria, data })
@@ -40,16 +41,15 @@ function manipularCancelamento() {
   ui.limparFormulario()
 }
 
-async function manipularBusca () {
+async function manipularBusca() {
   const termoBusca = document.getElementById("campo-busca").value
   try {
-    const pensamentosFiltrados = await api.buscarPensamentoPorTermo(termoBusca)
-    console.log(pensamentosFiltrados)
+    const pensamentosFiltrados = await api.buscarPensamentosPorTermo(termoBusca)
     ui.renderizarPensamentos(pensamentosFiltrados)
   } catch (error) {
     alert("Erro ao realizar busca")
   }
-} 
+}
 
 function validarData(data) {
   const dataAtual = new Date()

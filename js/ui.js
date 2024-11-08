@@ -26,7 +26,7 @@ const ui = {
       } else {
         pensamentosParaRenderizar = await api.buscarPensamentos()
       }
-
+      
       if (pensamentosParaRenderizar.length === 0) {
         mensagemVazia.style.display = "block"
       } else {
@@ -95,10 +95,9 @@ const ui = {
     }
 
     const iconeFavorito = document.createElement("img")
-    iconeFavorito.src = pensamento.favorito ?
+    iconeFavorito.src = pensamento.favorito ? 
     "assets/imagens/icone-favorito.png" :
     "assets/imagens/icone-favorito_outline.png"
-
     iconeFavorito.alt = "Ícone de favorito"
     botaoFavorito.appendChild(iconeFavorito)
 
