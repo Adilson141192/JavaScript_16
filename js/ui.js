@@ -61,8 +61,6 @@ const ui = {
     pensamentoAutoria.textContent = pensamento.autoria
     pensamentoAutoria.classList.add("pensamento-autoria")
 
-
-
     const pensamentoData = document.createElement("div")
 
     var options = {

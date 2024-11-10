@@ -26,10 +26,10 @@ function validarConteudo(conteudo) {
   return regexConteudo.test(conteudo)
 }
 
-const regexAutoria = /^[a-zA-Z]{3,15}$/;
+const regexAutoria = /^[a-zA-Z]{3,15}$/
 
 function validarAutoria(autoria) {
-  return regexAutoria.test(autoria);
+  return regexAutoria.test(autoria)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,10 +51,11 @@ async function manipularSubmissaoFormulario(event) {
   const conteudo = document.getElementById("pensamento-conteudo").value
   const autoria = document.getElementById("pensamento-autoria").value
   const data = document.getElementById("pensamento-data").value
+
   const conteudoSemEspacos = removerEspacos(conteudo)
   const autoriaSemEspacos = removerEspacos(autoria)
 
-  if(!validarConteudo(conteudoSemEspacos)) {
+  if (!validarConteudo(conteudoSemEspacos)) {
     alert("É permitida a inclusão apenas de letras e espaços com no mínimo 10 caracteres")
     return
   }
@@ -73,7 +74,7 @@ async function manipularSubmissaoFormulario(event) {
   `${conteudo.trim().toLowerCase()}-${autoria.trim().toLowerCase()}`
 
   if(pensamentosSet.has(chaveNovoPensamento)) {
-    alert('Esse pensamento já existe!')
+    alert('Esse pensamento já existe')
     return
   }
   
